@@ -6,8 +6,6 @@ import Work from './pages/work.js';
 import Contact from './pages/contact.js';
 import './App.css';
 
-
-
 function App() {
   return (
     <>

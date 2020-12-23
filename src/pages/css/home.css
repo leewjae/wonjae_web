@@ -1,4 +1,21 @@
-body {
+html, body {
   background: tan;
+  height : 100%;
+  margin : 10;
 }
+
+#Home {
+  width : 100%;
+  height : 100%;
+  font-size: 50px;
+  text-align: center;
+}
+
+#center-wrapper {
+  background: tan;
+  padding-top: 47.5vh;
+  padding-bottom: 45vh;
+}
+
+
 

@@ -1,14 +1,10 @@
-.container {
-  width: 30%;
+.Profile {
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.container img {
-  max-width: 50%;
-  height: auto;
+.Profile > img {
   display: block;
+  width : 20%;
 }
 
