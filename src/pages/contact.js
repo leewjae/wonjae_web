@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row } from "reactstrap";
 
 class Contact extends React.Component {
   state = {
@@ -7,9 +8,17 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div>
-      <h1>This is Contact</h1>
-      </div>
+      <Container>
+        <Row> 
+GitHub
+          <a href = "https://github.com/leewjae" target ="_blank" rel = "noreferrer">https://github.com/leewjae</a>
+        </Row>
+
+        <Row> 
+          Instagram 
+          <a href = "https://www.instagram.com/alarmcl0k/" target ="_blank" rel = "noreferrer">https://www.instagram.com/alarmcl0k/</a>
+        </Row>
+      </Container>
     )
   }
 }

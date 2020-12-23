@@ -1,18 +1,21 @@
 import React from "react";
 import './css/about.css';
-// import {Col, Row} from 'reactstrap'
+import {Container, Row} from 'reactstrap'
 
-let intro_message = "Hello I am Wonjae Lee. I am studying computer science in Diablo Valley College";
+let intro_message = "Hello I am Wonjae Lee. I am studying computer science in Diablo Valley College tttttttttfadfadfafadfafafadsfadfads";
 
 class About extends React.Component {
 
   render() {
     return (
       <div id = "About">
-        <div className = "Profile">
-          <img src={require('./img/wonjaelee.jpg').default} alt = ""/>
-          <p>{intro_message}</p>
-        </div>
+        <h1>About me</h1>
+        <Container>
+          <Row className = "Profile">
+            <img src={require('./img/wonjaelee.jpg').default} alt = ""/>
+            <div id = "intro-message">{intro_message}</div>
+          </Row>
+        </Container>
       </div>
     )
   }

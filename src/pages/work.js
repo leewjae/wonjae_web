@@ -4,6 +4,7 @@ import {Col, Row, Container} from "reactstrap"
 
 const experiences = [
   {
+    'link' : 'http://nccs.or.kr/',
     'id' : 1,
     'icon' : 'nccslogo.png',
     'place' : 'New Creation Christian School, Yongin, South Korea',
@@ -12,6 +13,7 @@ const experiences = [
   },
 
   {
+    'link' : 'http://www.dvhackers.com/',
     'id' : 2,
     'icon' : 'dvhackers.png',
     'place' : 'DV Hackers, Pleasant Hill, California',
@@ -20,6 +22,7 @@ const experiences = [
   },
 
   {
+    'link' : 'https://www.instagram.com/dvcmathclub/',
     'id' : 3,
     'icon' : 'dvcmathclub.png',
     'place' : 'DVC Math Club, Pleasant Hill, California',
@@ -40,7 +43,7 @@ class Work extends React.Component {
               <Row key = {experience.id}>
               <img className = "Work-Logo" src={require('./img/' + experience.icon).default} alt = 'Not loaded'/>
                 <Col key = {experience.id}>
-                  <div className = "Work-Place">{experience.place}</div>
+                  <a href = {experience.link} target='_blank' rel="noreferrer" className = "Work-Place">{experience.place}</a>
                   <div className = "Work-Title">{experience.title}</div>
                   <div className = "Work-Description">{experience.description}</div>
                 </Col>

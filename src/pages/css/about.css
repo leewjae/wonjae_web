@@ -5,6 +5,10 @@
 
 .Profile > img {
   display: block;
-  width : 20%;
+  width : 30%;
+  padding: 10px;
 }
 
+#intro-message {
+  width : 70%;
+}
