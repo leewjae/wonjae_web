@@ -1,0 +1,14 @@
+.container {
+  width: 30%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+}
+
