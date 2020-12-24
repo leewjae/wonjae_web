@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+div {
+  font-family: 'Cairo', sans-serif;
+}
+
+.Header {
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+#root {
+  background : tan;
+}

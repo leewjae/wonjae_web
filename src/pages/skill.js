@@ -36,7 +36,7 @@ class Skill extends React.Component {
   render() {
     return (
       <Container id = "Skills">
-        <h1>Skills</h1>
+        <div className = "Header">Skills</div>
         <Row>
           {languages.map(language => (
             <Row>{language.name} {language.rating} </Row>

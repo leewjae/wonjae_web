@@ -38,7 +38,7 @@ class Work extends React.Component {
     return (
 
       <Container id = "Work">
-        <h1>Work/ Experiences</h1>
+        <div className = "Header">Work / Experiences</div>
         {experiences.map(experience =>(
               <Row key = {experience.id}>
               <img className = "Work-Logo" src={require('./img/' + experience.icon).default} alt = 'Not loaded'/>

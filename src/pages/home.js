@@ -7,7 +7,7 @@ class Home extends React.Component {
   render() {
     return <div id = "Home">
     <div id = "center-wrapper">
-      <Typed id='Home-Typed' strings={['Wonjae Lee']}typeSpeed={200}></Typed></div>
+      <Typed id='Home-Typed' strings={['안녕하세요! I am Wonjae Lee']}typeSpeed={200}></Typed></div>
       </div>
   }
 }
