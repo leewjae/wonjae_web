@@ -8,9 +8,9 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container id = "Contact">
         <Row> 
-GitHub
+          GitHub
           <a href = "https://github.com/leewjae" target ="_blank" rel = "noreferrer">https://github.com/leewjae</a>
         </Row>
 

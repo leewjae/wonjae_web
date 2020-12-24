@@ -6,17 +6,19 @@ let intro_message = "Hello I am Wonjae Lee. I am studying computer science in Di
 
 class About extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div id = "About">
+        <Container id = "About">
         <h1>About me</h1>
-        <Container>
           <Row className = "Profile">
             <img src={require('./img/wonjaelee.jpg').default} alt = ""/>
             <div id = "intro-message">{intro_message}</div>
           </Row>
         </Container>
-      </div>
     )
   }
 }
