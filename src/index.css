@@ -27,3 +27,7 @@ div {
 #root {
   background : tan;
 }
+
+.container {
+  padding-bottom: 8%;
+}

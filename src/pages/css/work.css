@@ -1,12 +1,21 @@
 .Work-Logo {
-  width: 120px; 
-  height: auto;
+  width: 15%; 
+  height: 15%;
+  padding : 1%;
+}
+
+.Work-Title {
+  font-weight: bold;
+}
+
+.col {
+  padding : 20px;
 }
 
 .row {
   Padding : 30px;
 }
 
-.col {
-  padding : 20px;
+#Work {
+  font-size: x-large;
 }

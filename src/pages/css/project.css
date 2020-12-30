@@ -1,9 +1,9 @@
 #Projects > .row > img {
-  width : 50%;
-  height: auto;
+  width : 40%;
+  height: 10%;
   border-radius: 40px;
 }
 
 #Projects > .row {
-  font-size: large;
+  font-size: x-large;
 }

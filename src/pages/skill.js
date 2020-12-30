@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Row } from "reactstrap";
-
+import { Container, Row, Col } from "reactstrap";
+import "./css/skill.css"
 const languages =[
   {
     'name' : 'Python',
@@ -9,7 +9,7 @@ const languages =[
 
   {
     'name' : 'C++',
-    'rating' : '★ ★ ★ ★ ',
+    'rating' : '★ ★ ★ ',
   },
 
   {
@@ -25,7 +25,7 @@ const languages =[
   {
     'name' : 'JavaScript',
     'rating' : '★'
-  }
+  },
 ]
 
 class Skill extends React.Component {
@@ -36,10 +36,13 @@ class Skill extends React.Component {
   render() {
     return (
       <Container id = "Skills">
-        <div className = "Header">Skills</div>
-        <Row>
+                <div className = "Header">Skills</div>
+        <Row className = "skill">
           {languages.map(language => (
-            <Row>{language.name} {language.rating} </Row>
+            <>
+            <Col className = "skillname">{language.name} </Col>
+            <Col className = "skillrate">{language.rating}</Col>
+            </>
           ))}
         </Row>
       </Container>

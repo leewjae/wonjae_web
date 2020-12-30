@@ -6,13 +6,18 @@ const projects = [
   {
     "name" : "New Creation Evangelism Flyer",
     "picture" : "evangelism.png", 
-    "description" : "Thai and Korean, SwiftUI"
+    "description" : `Flyer with the contents of 
+    Word of Faith. Simply designed, and this is my 
+    first SwiftUI project. Published in Korean and Thai.
+    Available on the AppStore.`
   },
   
   {
     "name" : "Transfer assistant Console",
     "picture" : "transfer-assistant.png", 
-    "description" : "It was truely a fun activity"
+    "description" : `This was my first computer science project.
+    I coded everything in C++. I was able to learn what the collaboration
+    in computer science is in this project. `
   },
 ]
 
