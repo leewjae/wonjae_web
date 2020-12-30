@@ -8,7 +8,7 @@ class Navi extends React.Component {
 
   render() {
     return (
-
+      <h1>하이</h1>
     )
   }
 }
