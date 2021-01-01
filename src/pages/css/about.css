@@ -4,12 +4,14 @@
 }
 
 .Profile > img {
+  min-width: 300px;
   display: block;
-  width : 35%;
+  margin: 0px auto;
+  width : 40%;
+  margin-bottom: 5%;
 }
 
 #intro-message {
-  /* width : 65%; */
-  font-size: xx-large;
+  font-size: 1em;
 }
 

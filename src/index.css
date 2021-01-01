@@ -20,12 +20,12 @@ div {
 
 .Header {
   text-align: center;
-  font-size: 70px;
+  font-size: 3.5em;
   font-weight: bold;
 }
 
 #root {
-  background : tan;
+  background : rgb(224, 224, 214);
 }
 
 .container {

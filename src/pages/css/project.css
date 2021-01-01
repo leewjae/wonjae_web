@@ -1,9 +1,11 @@
 #Projects > .row > img {
-  width : 40%;
-  height: 10%;
+  width : 50%;
+  height: 20%;
   border-radius: 40px;
 }
 
 #Projects > .row {
-  font-size: x-large;
+  font-size: 1em;
+  margin-bottom: 3%;
 }
+

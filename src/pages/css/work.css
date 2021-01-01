@@ -12,10 +12,7 @@
   padding : 20px;
 }
 
-.row {
-  Padding : 30px;
-}
-
-#Work {
-  font-size: x-large;
+#Work > .row {
+  Padding : 5px;
+  font-size: 1.2em;
 }

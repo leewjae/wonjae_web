@@ -1,30 +1,55 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Progress } from "reactstrap";
 import "./css/skill.css"
+
+function proficiency_converter(input) {
+  if (input < 39) {
+    return "Newbie";
+  } else if (input < 59) {
+    return "Intermediate";
+  } else if (input < 79) {
+    return "Good";
+  } else {
+    return "Proficient"
+  }
+}
+
+function color_converter(input) {
+  if (input < 39) {
+    return "danger";
+  } else if (input < 59) {
+    return "warning";
+  } else if (input < 79) {
+    return "info";
+  } else {
+    return "success"
+  }
+}
+
 const languages =[
   {
-    'name' : 'Python',
-    'rating' : '★ ★ ★ ',
-  },
-
-  {
     'name' : 'C++',
-    'rating' : '★ ★ ★ ',
+    'rating' : '85',
   },
 
   {
-    'name' : 'Java',
-    'rating' : '★ ★',
+    'name' : 'Python',
+    'rating' : '60',
   },
 
   {
     'name' : 'Swift',
-    'rating' : '★ ★ ★',
+    'rating' : '60',
+  },
+
+  {
+    'name' : 'Java',
+    'rating' : '40',
   },
 
   {
     'name' : 'JavaScript',
-    'rating' : '★'
+    'rating' : '20',
   },
 ]
 
@@ -37,14 +62,18 @@ class Skill extends React.Component {
     return (
       <Container id = "Skills">
                 <div className = "Header">Skills</div>
-        <Row className = "skill">
+        <Col className = "skill">
           {languages.map(language => (
             <>
-            <Col className = "skillname">{language.name} </Col>
-            <Col className = "skillrate">{language.rating}</Col>
+            <Col>
+            <Row>
+              <Col className = "skillname">{language.name}: {proficiency_converter(language.rating)}</Col>
+            </Row>        
+            <Progress animated color = {color_converter(language.rating)} value = {language.rating}/> 
+            </Col>
             </>
           ))}
-        </Row>
+        </Col>
       </Container>
     )
   }
