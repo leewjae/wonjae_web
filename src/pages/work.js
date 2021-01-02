@@ -4,6 +4,14 @@ import {Col, Row, Container} from "reactstrap"
 
 const experiences = [
   {
+    'link' : "https://apps.apple.com/kr/app/%EC%83%88%EB%A1%9C%EC%9A%B4-%ED%94%BC%EC%A1%B0%EB%AC%BC-%EC%A0%84%EB%8F%84%EC%A7%80/id1533426135",
+    'id' : 0,
+    'place' : 'Faith Book Publisher, Yongin, South Korea',
+    'title' : 'iOS Application Developer',
+    'description' : `I developed an application that serves as a tool to spread Gospel messages to the churches throughout Korea. It had functions to search through the Bible scriptures and prayers for a variety of topics. I later received a request to translate and publish the app in English and Thai, respectively.`,
+  },
+  
+  {
     'link' : 'http://nccs.or.kr/',
     'id' : 1,
     'place' : 'New Creation Christian School, Yongin, South Korea',
