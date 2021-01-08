@@ -8,11 +8,7 @@
   font-weight: bold;
 }
 
-.col {
-  padding : 20px;
-}
-
 #Work > .row {
-  Padding : 5px;
   font-size: 1.2em;
+  padding : 15px;
 }

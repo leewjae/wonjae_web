@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row } from "reactstrap";
+import "./css/contact.css"
 
 class Contact extends React.Component {
   state = {
