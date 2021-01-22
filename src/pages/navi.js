@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Nav, NavItem} from "reactstrap";
+import {Container, Nav, NavItem, Button,Row} from "reactstrap";
 import "./css/navi.css"
 import Scrollchor from 'react-scrollchor';
 
@@ -8,7 +8,7 @@ class Navi extends React.Component {
   render() {
     return (
       <Container id = "Navi">
-        <Nav vertical>
+        <Nav id = "NavItemList">
           <NavItem>
             <Scrollchor to = "#Home" className = "Nav-link">Home</Scrollchor>
           </NavItem>

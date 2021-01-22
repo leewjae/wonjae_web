@@ -60,7 +60,7 @@ class Skill extends React.Component {
 
   render() {
     return (
-      <Container id = "Skills">
+      <Container id = "Skills" className = "section">
                 <div className = "Header">Skills</div>
         <Col className = "skill">
           {languages.map(language => (

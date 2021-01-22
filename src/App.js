@@ -12,13 +12,13 @@ const sections = ["Home, About, Work, Project, Skill, Contact"]
 function App() {
   return (
     <>
-        {/* <Navi className = "section"/> */}
-        <Home className = "section" to = {sections[0]}/>
-        <About className = "section" to = {sections[1]}/>
-        <Work className = "section" to = {sections[2]}/>
-        {/* <Project className = "section" to = {sections[3]}/> */}
-        <Skill className = "section" to = {sections[4]}/>
-        <Contact className = "section" to = {sections[5]}/>
+        <Navi/>
+        <Home to = {sections[0]}/>
+        <About to = {sections[1]}/>
+        <Work to = {sections[2]}/>
+        <Project to = {sections[3]}/>
+        <Skill to = {sections[4]}/>
+        <Contact to = {sections[5]}/>
     </>
   );
 }

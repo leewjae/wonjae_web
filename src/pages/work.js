@@ -86,7 +86,7 @@ class Work extends React.Component {
   render() {
     return (
 
-      <Container id = "Work">
+      <Container id = "Work" className = "section">
         <div className = "Header">Work / Experiences</div>
         {experiences.map(experience =>(
               <Row key = {experience.id}>

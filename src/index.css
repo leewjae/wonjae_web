@@ -12,10 +12,12 @@ code {
     monospace;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 div {
-  font-family: 'Cairo', sans-serif;
+  /* font-family: 'Cairo', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .Header {
@@ -28,6 +30,7 @@ div {
   background : rgb(224, 224, 214);
 }
 
-.container {
-  padding-bottom: 8%;
+.section.container {
+  padding-top: 3%;
 }
+

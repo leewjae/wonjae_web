@@ -10,7 +10,7 @@ class Contact extends React.Component {
   render() {
     return (
       
-      <Container id = "Contact">
+      <Container id = "Contact" className = "section">
         <div className = "Header">Contact Me</div>
         <Row> 
           GitHub

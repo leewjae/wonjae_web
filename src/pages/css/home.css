@@ -1,7 +1,7 @@
 #Home {
   text-align: center;
   color: white;
-  background : rgb(71, 106, 187);
+  background : #fefffb;
 }
 
 #center-wrapper {
@@ -10,6 +10,7 @@
   font-weight: bold;
   font-size: 3em;
   padding-top: 40vh;
+  color: #000000;
 }
 
 
