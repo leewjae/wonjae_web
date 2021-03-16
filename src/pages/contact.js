@@ -21,6 +21,11 @@ class Contact extends React.Component {
           Instagram 
           <a href = "https://www.instagram.com/alarmcl0k/" target ="_blank" rel = "noreferrer">: https://www.instagram.com/alarmcl0k/</a>
         </Row>
+          
+        <Row>
+          Email
+          <a href = "mailto:wonjaelee99@gmail.com">: wonjaelee99@gmail.com</a>
+        </Row>
       </Container>
     )
   }
