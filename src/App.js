@@ -17,8 +17,8 @@ function App() {
         <About to = {sections[1]}/>
         <Work to = {sections[2]}/>
         <Project to = {sections[3]}/>
-        <Skill to = {sections[4]}/>
-        <Contact to = {sections[5]}/>
+        {/* <Skill to = {sections[4]}/>
+        <Contact to = {sections[5]}/> */}
     </>
   );
 }

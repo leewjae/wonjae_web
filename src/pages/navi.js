@@ -21,11 +21,17 @@ class Navi extends React.Component {
           <NavItem>
           <Scrollchor to = "Projects" className = "Nav-link">Projects</Scrollchor>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
           <Scrollchor to = "#Skills" className = "Nav-link">Skills</Scrollchor>
           </NavItem>
           <NavItem>
           <Scrollchor to = "#Contact" className = "Contact">Contact</Scrollchor>
+          </NavItem> */}
+          <NavItem>
+              <a href= "https://www.instagram.com/alarmcl0k/" target="_blank">Contact Me</a>
+          </NavItem>
+          <NavItem>
+              <a href= "https://github.com/leewjae" target="_blank">GitHub</a>
           </NavItem>
         </Nav>
       </Container>
