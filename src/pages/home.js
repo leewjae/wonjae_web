@@ -18,7 +18,7 @@ const Home = () => {
                         <h4 className = "accepted"> UC Berkeley: Accepted </h4>
                         <h4 className = "waitlisted"> UCLA: Waitlisted </h4>
                         <h4 className = "accepted"> UC Irvine: Accepted </h4>
-                        <h4 className = "accepted"> UC San Diego: Pending </h4>
+                        <h4 className = "accepted"> UC San Diego: Accepted </h4>
                         <h4> Johns Hopkins University: Pending </h4>
                     </Col>
 
