@@ -15,10 +15,10 @@ const Home = () => {
                 <h2>Major: Computer Science</h2>
                 <Row>
                     <Col>
-                        <h4> UC Berkeley: Pending </h4>
-                        <h4> UCLA: Pending </h4>
-                        <h4> UC Irvine: Pending </h4>
-                        <h4> UC San Diego: Pending </h4>
+                        <h4 className = "accepted"> UC Berkeley: Accepted </h4>
+                        <h4 className = "waitlisted"> UCLA: Waitlisted </h4>
+                        <h4 className = "accepted"> UC Irvine: Accepted </h4>
+                        <h4 className = "accepted"> UC San Diego: Pending </h4>
                         <h4> Johns Hopkins University: Pending </h4>
                     </Col>
 
@@ -27,7 +27,7 @@ const Home = () => {
                         <h4> MIT: Pending </h4>
                         <h4> Rice University: Pending </h4>
                         <h4> Stanford University: Pending </h4>
-                        <h4> University of Washington: Pending </h4>
+                        <h4 className = "denied"> University of Washington: Denied </h4>
                     </Col>
                 </Row>
                 </div>

@@ -18,6 +18,16 @@ h1{
   color: #000000;
 }
 
+.accepted {
+    color : green;
+}
 
+.waitlisted {
+    color : orange;
+}
+
+.denied {
+    color : red;
+}
 
 
