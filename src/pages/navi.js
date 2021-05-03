@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Nav, NavItem, Button,Row} from "reactstrap";
+import {Container, Nav, NavItem} from "reactstrap";
 import "./css/navi.css"
 import Scrollchor from 'react-scrollchor';
 
@@ -28,10 +28,10 @@ class Navi extends React.Component {
           <Scrollchor to = "#Contact" className = "Contact">Contact</Scrollchor>
           </NavItem> */}
           <NavItem>
-              <a href= "https://www.instagram.com/alarmcl0k/" target="_blank">Contact Me</a>
+              <a href= "https://www.instagram.com/alarmcl0k/" target="_blank" rel="noreferrer">Contact Me</a>
           </NavItem>
           <NavItem>
-              <a href= "https://github.com/leewjae" target="_blank">GitHub</a>
+              <a href= "https://github.com/leewjae" target="_blank" rel="noreferrer">GitHub</a>
           </NavItem>
         </Nav>
       </Container>

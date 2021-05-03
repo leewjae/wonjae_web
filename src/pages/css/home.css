@@ -6,28 +6,38 @@
 
 h1{
     font-weight: bold;
+    
 }
 
 #center-wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   font-weight: bold;
-  font-size: 3em;
+  /* font-size: 3em; */
   /* padding-top: 40vh; //for using typed */ 
-  padding-top: 20vh;
+  padding-top: 10%;
+  padding-bottom: 10%;
   color: #000000;
+  display: flex;
+  flex-direction: column;
 }
 
 .accepted {
     color : green;
+    font-size: 1em;
 }
 
 .waitlisted {
     color : orange;
+    font-size: 1em;
 }
 
 .denied {
     color : red;
+    font-size: 1em;
 }
 
-
+.pending {
+    color : black;
+    font-size: 1em;
+}

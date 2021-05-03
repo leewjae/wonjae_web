@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/home.css";
-import Typed from "react-typed";
-import {Row, Col} from "reactstrap";
+// import Typed from "react-typed";
+import { Col} from "reactstrap";
 
 const Home = () => {
 
@@ -13,23 +13,18 @@ const Home = () => {
                 <h1>Application Status...</h1>
                 <h2>GPA 4.0/4.0 </h2>
                 <h2>Major: Computer Science</h2>
-                <Row>
-                    <Col>
-                        <h4 className = "accepted"> UC Berkeley: Accepted </h4>
-                        <h4 className = "waitlisted"> UCLA: Waitlisted </h4>
-                        <h4 className = "accepted"> UC Irvine: Accepted </h4>
-                        <h4 className = "accepted"> UC San Diego: Accepted </h4>
-                        <h4> Johns Hopkins University: Pending </h4>
-                    </Col>
-
-                    <Col>
-                        <h4> Georgia Tech: Pending </h4>
-                        <h4> MIT: Pending </h4>
-                        <h4> Rice University: Pending </h4>
-                        <h4> Stanford University: Pending </h4>
-                        <h4 className = "denied"> University of Washington: Denied </h4>
-                    </Col>
-                </Row>
+                <Col>
+                    <h4 className = "accepted"> UC Berkeley: Accepted </h4>
+                    <h4 className = "waitlisted"> UCLA: Waitlisted </h4>
+                    <h4 className = "accepted"> UC Irvine: Accepted </h4>
+                    <h4 className = "accepted"> UC San Diego: Accepted </h4>
+                    <h4 className = "pending"> Johns Hopkins University: Pending </h4>
+                    <h4 className = "pending"> Georgia Tech: Pending </h4>
+                    <h4 className = "pending"> MIT: Pending </h4>
+                    <h4 className = "pending"> Rice University: Pending </h4>
+                    <h4 className = "pending"> Stanford University: Pending </h4>
+                    <h4 className = "pending"> University of Washington: Pending </h4>
+                </Col>
                 </div>
             </div>
         </>

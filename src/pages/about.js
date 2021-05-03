@@ -1,14 +1,15 @@
 import React from "react";
 import './css/about.css';
-import {Container, Col} from 'reactstrap'
+import {Container, Col, Row} from 'reactstrap'
 
-let intro_message = `Hello I am Wonjae Lee. I am studying computer
- science in Diablo Valley College. I will transfer to 4-year-institution
- in Fall 2021. Currently living in South Korea.
- I love playing bass guitar, and I own Moollon's 5-string bass.
- I started to play bass since 18. I started to study React.js recently.
- I did learn of Javascript before, but this is my first time publishing my 
- personal website! `;
+let intro_message = `Hello I am Wonjae Lee. I am researching in the area of
+electrical engineering and computer science at University
+of California, Berkeley. Currently living in South Korea.
+I am interested in making people's lives better. Especially, I am currently
+preoccupied with making personal website and making iPhone Application.
+I have experiences in making iPhone application using SwiftUI. Furthermore, I
+will be studying artificial intelligence and virtual reality in UC Berkeley.
+Any questions or thoughts, please click the contact me button above. Thank you! `;
 
 class About extends React.Component {
 
@@ -16,10 +17,11 @@ class About extends React.Component {
     return (
         <Container id = "About" className = "section">
         <div className = "Header">About me</div>
-          <Col className = "Profile">
-            <img src={require('./img/wonjaelee.jpg').default} alt = ""/>
-            <div id = "intro-message">{intro_message}</div>
-          </Col>
+          <Row className = "Profile">
+                <img src={require('./img/wonjaelee.jpg').default} alt = ""/>
+                <img src={require('./img/CAL_ACCEPTED.png').default} alt = ""/>
+          </Row>
+          <div id = "intro-message">{intro_message}</div>
         </Container>
     )
   }
