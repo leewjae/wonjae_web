@@ -4,9 +4,16 @@
   background : #fefffb;
 }
 
+#Home-Typed {
+    font-size: 4em;
+}
+
 h1{
     font-weight: bold;
-    
+}
+
+#gpa {
+    font-size: 1.5em;
 }
 
 #center-wrapper {
@@ -15,7 +22,7 @@ h1{
   font-weight: bold;
   /* font-size: 3em; */
   /* padding-top: 40vh; //for using typed */ 
-  padding-top: 10%;
+  padding-top: 15%;
   padding-bottom: 10%;
   color: #000000;
   display: flex;
@@ -32,7 +39,7 @@ h1{
     font-size: 1em;
 }
 
-.denied {
+.rejected {
     color : red;
     font-size: 1em;
 }

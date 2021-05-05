@@ -9,7 +9,11 @@ const projects = [
     "description" : `Flyer with the contents of 
     Word of Faith. Simply designed, and this is my 
     first SwiftUI project. Published in Korean and Thai.
-    Available on the AppStore.`
+    Available on the AppStore.`,
+    "link" : `https://apps.apple.com/kr/
+    app/%EC%83%88%EB%A1%9C%EC%9A%B4-%ED%
+    94%BC%EC%A1%B0%EB%AC%BC-%EC%A0%84%EB%
+    8F%84%EC%A7%80/id1533426135#?platform=iphone`
   },
   
   {
@@ -17,7 +21,8 @@ const projects = [
     "picture" : "transfer-assistant.png", 
     "description" : `This was my first computer science project.
     I coded everything in C++. I was able to learn what the collaboration
-    in computer science is in this project. `
+    in computer science is in this project. `,
+    "link" : ""
   },
 ]
 

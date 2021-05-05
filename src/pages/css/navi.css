@@ -10,8 +10,9 @@
 }
 
 #NavItemList {
-  margin : 10 0 10 0 px;
-  
+  /* margin : 10 0 10 0 px; */
+  display: flex;
+  flex-direction: row;
 }
 
 .container {
