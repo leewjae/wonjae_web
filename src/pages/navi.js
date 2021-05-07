@@ -2,6 +2,19 @@ import React from "react";
 import {Container, Nav, NavItem} from "reactstrap";
 import "./css/navi.css"
 import Scrollchor from 'react-scrollchor';
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+
+const Example = () => {
+    return (
+        <h1>Hi!!!</h1>
+    )
+}
+
+const Bye = () => {
+    return (
+        <h1>Bye!!</h1>
+    )
+}
 
 class Navi extends React.Component {
 
@@ -9,6 +22,18 @@ class Navi extends React.Component {
     return (
       <Container id = "Navi">
         <Nav id = "NavItemList">
+        <Router>
+            <Link to= "/example">Sample</Link>
+            <Link to = "/bye">bye</Link>
+            <Switch>
+            <Route path="/example">
+                <Example />
+            </Route>
+            <Route path="/bye">
+                <Bye />
+            </Route>
+            </Switch>
+        </Router>
           <NavItem>
             <Scrollchor to = "#Home" className = "Nav-link">Home</Scrollchor>
           </NavItem>
