@@ -1,27 +1,41 @@
 import React from "react";
 import {Container, Nav, NavItem} from "reactstrap";
-import "./css/navi.css"
+import "./css/MainRouter.css"
 import Scrollchor from 'react-scrollchor';
 import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import About from './about.js'
 import Project from './project.js';
 import Work from './work.js';
 import Home from './home.js'
+import Blog from './blog.js'
+import {Row} from 'reactstrap'
 
-class Navi extends React.Component {
+class MainRouter extends React.Component {
 
   render() {
     return (
-      <Container id = "Navi">
+      <Container id = "Router">
         <Router>
-            {/* <Link to= "/Home">Home</Link> */}
+
+            {/* naviagtion section */}
+            <Row>
+            <div id = "about" class = "routerItem">
             <Link to = "/About">About</Link>
+            </div>
+            <div id = "Work" class = "routerItem">
             <Link to = "/Work">Work</Link>
+            </div>
+            <div id = "Project" class = "routerItem">
             <Link to = "/Project">Project</Link>
+            </div>
+            <div id = "Blog" class = "routerItem">
+            <Link to = "/Blog">Blog</Link>
+            </div>
+            </Row>
+
+
+            {/* Switch Section  */}
             <Switch>
-            {/* <Route path="/Home">
-                <Home />
-            </Route> */}
             <Route path="/About">
                 <About />
             </Route>
@@ -31,6 +45,9 @@ class Navi extends React.Component {
             <Route path="/Project">
                 <Project />
             </Route>
+            <Route path="/Blog">
+                <Blog />
+            </Route>
             </Switch>
         </Router>
       </Container>
@@ -38,4 +55,4 @@ class Navi extends React.Component {
   }
 }
 
-export default Navi
+export default MainRouter

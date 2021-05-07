@@ -1,12 +1,18 @@
-#Navi {
+#Router {
   /* position: fixed; */
   max-width: 100%;
+  min-height: 100%;
   background: #b6ad7b;
   z-index: 2000;
 }
 
 .nav-item {
   padding-left: 10%;
+}
+
+.routerItem {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 #NavItemList {
@@ -20,12 +26,13 @@
   padding-bottom: 1%;
 }
 
-.nav-item a {
+.routerItem a {
   color: #fff;
   font-weight: bold;
 }
 
-.nav-item a:hover {
+/* Color changes when hover */
+.routerItem a:hover {
   color: #49cb6e;
   text-decoration: none;
 }
