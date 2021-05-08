@@ -4,7 +4,7 @@ import Post from "./components/Post"
 import {Container, Row, Col} from "reactstrap"
 import "./css/blog.css"
 
-const Blog = () => {
+const Blog = (props) => {
     //postTitle is for the title of the post
     const [postTitle, setPostTitle] = useState("");
     //post is for the content of the post
@@ -50,7 +50,7 @@ const Blog = () => {
     //display changed value (example: change in 
     //title, content, etc
     //
-    const onChange = (event) => {
+    const onTextChange = (event) => {
         const {target : {value}, } = event;
         setText(value);
     }
@@ -75,20 +75,18 @@ const Blog = () => {
                         value = {postTitle}
                         onChange = {onTitleChange}
                         placeholder = "What is the title of your post?"
-                        maxLength = {30}
+                        cols = {30}
+                        rows = {1}
                     />
                     <textarea
                         id = "content-box"
                         type="text"
                         value={text}
-                        onChange={onChange}
+                        onChange={onTextChange}
                         placeholder="What's on your mind?"
-                        maxLength={120}
-                    / >
+                    />
                     <input type="submit" value = "upload"/>
-                <button onClick={()=>{setIsWriting(false)}}>
-                    Cancel
-                </button>
+                    <input type = "button" value = "Cancel" onClick={()=>{setIsWriting(false)}} />
                 </form>
                 </Col>
                 </>
@@ -100,13 +98,15 @@ const Blog = () => {
             <div id = "posting">Postings...</div>
             {posts.map((post) => (
                 <Post 
-                key = {post.id}
-                postObj={post} 
-            />))}
+                    key = {post.id}
+                    postObj={post} 
+                    props = {props}
+                />
+                ))}
             </div>
         </Container>
 
     )
 }
 
-export default Blog
+export default Blog;

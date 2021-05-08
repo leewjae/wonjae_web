@@ -38,7 +38,7 @@ class MainRouter extends React.Component {
             <Route path="/about" component ={About} />
             <Route path="/work" component ={Work} />
             <Route path="/project" component ={Project} />
-            <Route path="/blog" component ={Blog} />
+            <Route exact path="/blog" component ={Blog} />
             </Switch>
         </Router>
       </Container>
