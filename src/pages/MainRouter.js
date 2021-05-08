@@ -16,38 +16,29 @@ class MainRouter extends React.Component {
     return (
       <Container id = "Router">
         <Router>
-
             {/* naviagtion section */}
-            <Row>
-            <div id = "about" class = "routerItem">
-            <Link to = "/About">About</Link>
+            <Row id = "navigationBar">
+            <div id = "about" className = "routerItem">
+            <Link to = "/about">About</Link>
             </div>
-            <div id = "Work" class = "routerItem">
-            <Link to = "/Work">Work</Link>
+            <div id = "Work" className = "routerItem">
+            <Link to = "/work">Work</Link>
             </div>
-            <div id = "Project" class = "routerItem">
-            <Link to = "/Project">Project</Link>
+            <div id = "Project" className = "routerItem">
+            <Link to = "/project">Project</Link>
             </div>
-            <div id = "Blog" class = "routerItem">
-            <Link to = "/Blog">Blog</Link>
+            <div id = "Blog" className = "routerItem">
+            <Link to = "/blog">Blog</Link>
             </div>
             </Row>
 
 
             {/* Switch Section  */}
             <Switch>
-            <Route path="/About">
-                <About />
-            </Route>
-            <Route path="/Work">
-                <Work />
-            </Route>
-            <Route path="/Project">
-                <Project />
-            </Route>
-            <Route path="/Blog">
-                <Blog />
-            </Route>
+            <Route path="/about" component ={About} />
+            <Route path="/work" component ={Work} />
+            <Route path="/project" component ={Project} />
+            <Route path="/blog" component ={Blog} />
             </Switch>
         </Router>
       </Container>

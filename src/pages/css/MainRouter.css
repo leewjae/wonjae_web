@@ -1,13 +1,17 @@
 #Router {
   /* position: fixed; */
   max-width: 100%;
-  min-height: 100%;
+  min-height: 1000px;
   background: #b6ad7b;
-  z-index: 2000;
 }
 
-.nav-item {
-  padding-left: 10%;
+#navigationBar {
+  background: red;
+  position: fixed;
+  min-width: 100%;
+  margin-top: -1% ;
+  opacity: 100%;
+  z-index: 2000;
 }
 
 .routerItem {
