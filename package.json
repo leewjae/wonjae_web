@@ -24,6 +24,7 @@
     "react-typed": "^1.2.0",
     "reactstrap": "^8.7.1",
     "typed-js": "^0.2.3",
+    "uuid": "^8.3.2",
     "web-vitals": "^0.2.4",
     "yarn": "^1.22.10"
   },

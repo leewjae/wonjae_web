@@ -9,9 +9,10 @@ const Home = () => {
         <>
         <div id = "Home">
             <div id = "center-wrapper">
-                <div id='Home-Typed'>
+                {/* <div id='Home-Typed'>
                 <Typed strings={['Hello, welcome to my website!']}typeSpeed={100}></Typed>
-                </div>
+                </div> */}
+                <h1>Hello World</h1>
                 {/* <h1>Application Status...</h1> */}
                 {/* <h2 id = "gpa">GPA 4.0/4.0 </h2>
                 <h2>Major: Computer Science</h2>

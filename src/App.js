@@ -1,13 +1,12 @@
-import Home from './pages/home.js'
-import Navi from './pages/MainRouter.js';
+import { Router } from 'react-router';
 import './App.css';
-import MainRouter from './pages/MainRouter.js';
+import AppRouter from './pages/Router.js';
 
 function App() {
+
   return (
     <>
-        <MainRouter/>
-        {/* <Home /> */}
+        <AppRouter />
     </>
   );
 }

@@ -2,11 +2,11 @@
   /* position: fixed; */
   max-width: 100%;
   min-height: 1000px;
-  background: #b6ad7b;
+  background: #9986a7;
 }
 
 #navigationBar {
-  background: red;
+  background: rgb(109, 147, 223);
   position: fixed;
   min-width: 100%;
   margin-top: -1% ;
@@ -15,8 +15,8 @@
 }
 
 .routerItem {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 6%;
+    padding-right: 6%;
 }
 
 #NavItemList {
