@@ -1,22 +1,7 @@
 #Router {
-  /* position: fixed; */
   max-width: 100%;
-  min-height: 1000px;
+  min-height: 100vh;
   background: #9986a7;
-}
-
-#navigationBar {
-  background: rgb(109, 147, 223);
-  position: fixed;
-  min-width: 100%;
-  margin-top: -1% ;
-  opacity: 100%;
-  z-index: 2000;
-}
-
-.routerItem {
-    padding-left: 6%;
-    padding-right: 6%;
 }
 
 #NavItemList {
@@ -28,19 +13,4 @@
 .container {
   padding-top: 1%;
   padding-bottom: 1%;
-}
-
-.routerItem a {
-  color: #fff;
-  font-weight: bold;
-}
-
-/* Color changes when hover */
-.routerItem a:hover {
-  color: #49cb6e;
-  text-decoration: none;
-}
-
-#ContactBtn {
-  font-weight: bold;
 }

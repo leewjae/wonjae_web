@@ -1,13 +1,13 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import { authService, firebaseInstance } from "../fbase";
 import {Container, Col} from "reactstrap"
 import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
-const Login = (props, {user}) => {
+import "./css/login.css"
+const Login = (props) => {
 
     const [email, setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [error, setError] = useState("")
-    const [userObj,setUserObj] = useState(null);
 
     const onChange =(event)=> {
         const {
@@ -28,53 +28,56 @@ const Login = (props, {user}) => {
             data = await authService.signInWithEmailAndPassword(
               email, password
             )
-            setUserObj(data);
+            props.setUserObj(data);
         } catch(error) {
           setError(error.message)
         }
       }
 
       const logOutFunc = () => {
-          setUserObj(null);
+          props.setUserObj(null);
       }
+    
 
-      return (
-      <>
-
-      {userObj ? 
-      <>
-        <h1>Hello</h1>
-        <h1>Hello!!!!!!</h1>
-        <button onClick ={logOutFunc}>Log Out</button>
-        <button onClick = {()=>{console.log(userObj)}}>console log userObj</button>
-      </>
-        : 
-        <Col>
-            <h1>Login</h1>
-            <h1>Branch: dev</h1>
-            <form onSubmit = {onSubmit}>
-                <input 
-                name="email"
-                type="text"
-                placeholder="Email"
-                required value={email}
-                onChange={onChange} 
-                />
-                <input
-                name="password"
-                type="password"
-                placeholder="Password" 
-                required value={password} 
-                onChange={onChange} 
-                />
-                <input type="submit" value = "Log in"/>
-                {error}
-            </form>
-        </Col>
-      }
-            
-      </>
-      )
+    return (
+    <>
+                {props.userObj ? 
+                    <Col className = "login-box">
+                    <h1>Hello Wonjae</h1>
+                    <button onClick ={logOutFunc}>Log Out</button>
+                    <button onClick = {()=>{console.log(props.userObj)}}>console log userObj</button>
+                    </Col>
+                  : 
+                  <Col className = "login-box">
+                      <h1>Login</h1>
+                      <h1>Branch: dev</h1>
+                      <form onSubmit = {onSubmit}>
+                          <input 
+                          name="email"
+                          type="text"
+                          placeholder="Email"
+                          required value={email}
+                          onChange={onChange} 
+                          />
+                        <br />
+                          <input
+                          name="password"
+                          type="password"
+                          placeholder="Password" 
+                          required value={password} 
+                          onChange={onChange} 
+                          />
+                          <br />
+                          <input type="submit" value = "Log in"/>
+                          {error}
+                      </form>
+                      <button onClick = {()=>{console.log(props)}}>
+                        console log pros
+                      </button>
+                  </Col>
+                }
+                </>
+    )
 }
 
 export default Login;
