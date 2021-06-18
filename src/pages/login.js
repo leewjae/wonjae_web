@@ -45,7 +45,6 @@ const Login = (props) => {
                     <Col className = "login-box">
                     <h1>Hello Wonjae</h1>
                     <button onClick ={logOutFunc}>Log Out</button>
-                    <button onClick = {()=>{console.log(props.userObj)}}>console log userObj</button>
                     </Col>
                   : 
                   <Col className = "login-box">
@@ -68,12 +67,10 @@ const Login = (props) => {
                           onChange={onChange} 
                           />
                           <br />
-                          <input type="submit" value = "Log in"/>
                           {error}
+                          <br />
+                          <input type="submit" value = "Log in"/>
                       </form>
-                      <button onClick = {()=>{console.log(props)}}>
-                        console log pros
-                      </button>
                   </Col>
                 }
                 </>

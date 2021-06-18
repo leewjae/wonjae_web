@@ -21,9 +21,9 @@ const Blog = (props) => {
     //If you want to show n posts at once, set this state to n - 1
     const [currentPostIndex, setCurrentPostIndex] = useState(0);
 
-    const [numberOfPostsInOneView, setNumberOfPostsInOneView] = useState(3);
+    const [numberOfPostsInOneView, setNumberOfPostsInOneView] = useState(4);
     //
-    const [maximumVisibleWordLength, setMaximumVisibleWordLength] = useState(50);
+    const [maximumVisibleWordLength, setMaximumVisibleWordLength] = useState(100);
 
     //This will update the state "posts"
     const getPosts = async () => {
@@ -80,72 +80,31 @@ const Blog = (props) => {
         return (parstDate[1] + " " + parstDate[2] + ", "+ parstDate[3] + " " + parstDate[4] + " (KST)");
     }
 
-    const nextPosts = () => {
-        console.log(currentPostIndex)
-        {
-            ((currentPostIndex + numberOfPostsInOneView) < posts.length)
-            ?
-            setCurrentPostIndex(currentPostIndex + numberOfPostsInOneView)
-            :
-            window.alert("You cannot move forward")
-        }
-    }
+    // const nextPosts = () => {
+    //     console.log(currentPostIndex)
+    //     {
+    //         ((currentPostIndex + numberOfPostsInOneView) < posts.length)
+    //         ?
+    //         setCurrentPostIndex(currentPostIndex + numberOfPostsInOneView)
+    //         :
+    //         window.alert("You cannot move forward")
+    //     }
+    // }
 
-    const previousPosts = () => {
-        console.log(currentPostIndex)
-        {
-            ((currentPostIndex - numberOfPostsInOneView) >= 0)
-            ?
-            setCurrentPostIndex(currentPostIndex - numberOfPostsInOneView)
-            :
-            window.alert("You cannot move backward")
-        }
-    }
+    // const previousPosts = () => {
+    //     console.log(currentPostIndex)
+    //     {
+    //         ((currentPostIndex - numberOfPostsInOneView) >= 0)
+    //         ?
+    //         setCurrentPostIndex(currentPostIndex - numberOfPostsInOneView)
+    //         :
+    //         window.alert("You cannot move backward")
+    //     }
+    // }
 
     return (
-        <Container>
-            {userObj ? 
-                <>
-                {/* Super user login was successful */}
-                        { isWriting ? 
-                            <>
-                                <Col>
-                                <form onSubmit = {onSubmit}>
-                                    <textarea
-                                        id = "title-box"
-                                        type = "text"
-                                        value = {postTitle}
-                                        onChange = {onTitleChange}
-                                            placeholder = "What is the title of your post?"
-                                        cols = {30}
-                                        rows = {1}
-                                    />
-                                    <textarea
-                                        id = "content-box"
-                                        type="text"
-                                        value={text}
-                                        onChange={onTextChange}
-                                        placeholder="What's on your mind?"
-                                    />
-                                    <input type="submit" value = "upload"/>
-                                    <input type="file" accept="image/*"/>
-                                    <input type = "button" value = "Cancel" onClick={()=>{setIsWriting(false)}} />
-                                </form>
-                                    </Col>
-                            </>
-                                :
-                                <button onClick={()=>{setIsWriting(true)}}>
-                                    Write Post
-                                </button>
-                        }
-            
-            
-            
-            </>
-            :
-            <h1></h1>}
-            <h1>Hello</h1>
-            <div>
+        <Box align="center">
+            <Box align="start">
 
             <div id = "posting">Postings...</div>
 
@@ -164,45 +123,71 @@ const Blog = (props) => {
                         
                         <h3>{post.post.slice(0,maximumVisibleWordLength) + "..."} </h3>
                         :
-                        
                         <h3>{post.post} </h3>
                     }
                     <div className = "timestamp">{dateConverter(new Date(post.createdAt).toString())}</div>
                     </div>
                 ))}
-            </div>
-            {/* <button onClick = {()=>{console.log(posts.slice(0,3))}}>console log posts</button> */}
+            </Box>
+            {/* Pagination Section */}
             {
-                (posts.length > numberOfPostsInOneView) 
-                ?
-                // number of posts is greater than number of max posts
-                <>
-                <button onClick={previousPosts}>
-                    Previous Posts
-                </button>
-                <button onClick={nextPosts}>
-                    Next Posts
-                </button>
                 <Box
-                    align="center"
-                    pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
-                >
+                        align="center"
+                        pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
+                        id = "blog-pagination"
+                    >
                     <Text margin={{ bottom: 'small' }}>
-                    Custom Theme via theme.pagination.button
+                    Click the button below for navigating posts!        
                     </Text>
                     <Pagination onChange={(event)=>{<>
-                    {console.log(event.page)}
-                    {console.log(event.startIndex)}
-                    {console.log(event.endIndex)}
                     {setCurrentPostIndex(event.startIndex)}
-                    </>}} numberItems={posts.length} step={3}/>
+                    </>}} numberItems={posts.length} step={numberOfPostsInOneView}/>
                 </Box>
-                </>
-                :
-                // number of posts is smaller than number of max posts
-                null
             }
-        </Container>
+
+            {userObj ? 
+                <>
+                {/* Super user login was successful */}
+                        { isWriting ? 
+                            <>
+                                <Box align="start">
+                                    <textarea
+                                            id = "title-box"
+                                            type = "text"
+                                            value = {postTitle}
+                                            onChange = {onTitleChange}
+                                            placeholder = "What is the title of your post?"
+                                            cols = {50}
+                                            rows = {1}
+                                    />
+                                </Box>
+                                <Box align="center" direction="column">
+                                <form onSubmit = {onSubmit}>
+                                <textarea
+                                        id = "content-box"
+                                        type="text"
+                                        value={text}
+                                        onChange={onTextChange}
+                                        placeholder="What's on your mind?"
+                                        cols = {80}
+                                        rows = {10}
+                                />
+                                <input type="submit" value = "upload"/>
+                                </form>
+                                {/* <input type="file" accept="image/*"/> */}
+                                <input type = "button" value = "Cancel" onClick={()=>{setIsWriting(false)}} />
+                                </Box>
+                            </>
+                                :
+                                <button onClick={()=>{setIsWriting(true)}}>
+                                    Write Post
+                                </button>
+                        }
+            </>
+            :
+                        null
+            }
+        </Box>
     )
 
     

@@ -3,8 +3,8 @@
 }
 
 #content-box {
-    width : 80%;
-    min-height : 100px;
+    /* width : 80%;
+    min-height : 100px; */
 }
 
 .post a:hover {
@@ -21,4 +21,9 @@
 
 .timestamp {
     font-size: 1em;
+}
+
+#blog-pagination {
+    /* position: absolute;
+    top: 85vh; */
 }
