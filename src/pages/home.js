@@ -12,6 +12,7 @@ const Home = () => {
                 <h1>Hello World</h1>
                 <br />
                 <h1>If you want to contact me please use the link below</h1>
+                
                 </div>
             </div>
         </>
