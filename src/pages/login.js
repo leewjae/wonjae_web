@@ -49,7 +49,7 @@ const Login = (props) => {
                   : 
                   <Col className = "login-box">
                       <h1>Login</h1>
-                      <h1>Branch: dev</h1>
+                      <h1>Branch: Master</h1>
                       <form onSubmit = {onSubmit}>
                           <input 
                           name="email"

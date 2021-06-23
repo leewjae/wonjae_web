@@ -1,8 +1,7 @@
-import About from './pages/about.js'
-import Project from './pages/project.js';
-import Work from './pages/work.js';
-import Navi from './pages/navi.js';
+import AppRouter from "./pages/Router.js"
+import Footer from "./pages/components/Footer.js"
 import './App.css';
+import { Router } from 'react-router-dom';
 
 function App() {
 

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "./css/Router.css"
-import About from './about.js'
+import About from './About.js'
 import Work from './Work.js';
 import Blog from './blog.js'
 import PageNotFound from './PageNotFound.js'
@@ -25,6 +25,7 @@ const AppRouter = () => {
             {/* Log in section */}
                 
             {/* Switch Section  */}
+            <Container id = "content">
             <Switch>
                 <Route exact path= "/" component ={About} />
                 <Route path= "/work" component ={Work} />
@@ -37,6 +38,7 @@ const AppRouter = () => {
                 </Route>
                 <Route component = {PageNotFound} />
             </Switch>
+            </Container>
           </Router>
         </Container>
         </>

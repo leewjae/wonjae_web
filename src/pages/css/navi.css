@@ -1,10 +1,11 @@
 #navigationBar {
-    /* background: rgb(109, 147, 223); */
-    position: relative;
-    min-width: 100%;
+    background:#12232e;
+    position: fixed;
+    min-width: 100vw;
     opacity: 100%;
     z-index: 2000;
-    margin-bottom: 5vh;
+      padding-top: 1vh;
+      padding-bottom: 1vh;
   }
 
 .navigation-item a {

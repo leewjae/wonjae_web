@@ -10,6 +10,10 @@
 }
 
 .container {
-  padding-top: 1%;
-  padding-bottom: 1%;
+  /* padding-top: 1%; */
+  padding-bottom: 5vh;
+}
+
+#content {
+    padding-top: 5vh;
 }
