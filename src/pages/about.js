@@ -14,6 +14,7 @@ class About extends React.Component {
 
   render() {
     return (
+
         <Container id = "About" className = "section">
           <Row className = "Profile">
               <Col className = "profile-column">

@@ -1,0 +1,15 @@
+#Router {
+  max-width: 100%;
+  min-height: 100vh;
+  background: #DADED4;
+}
+
+#NavItemList {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}

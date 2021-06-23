@@ -1,0 +1,29 @@
+#posting {
+    font-size: 3em;
+}
+
+#content-box {
+    /* width : 80%;
+    min-height : 100px; */
+}
+
+.post a:hover {
+    color: red
+}
+
+.post a {
+    color : white
+}
+
+.post {
+    max-width: 30vw;
+}
+
+.timestamp {
+    font-size: 1em;
+}
+
+#blog-pagination {
+    /* position: absolute;
+    top: 85vh; */
+}

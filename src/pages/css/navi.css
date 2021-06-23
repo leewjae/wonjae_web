@@ -1,32 +1,24 @@
-#Navi {
-  position: fixed;
-  max-width: 100%;
-  background: #2d8568;
-  z-index: 2000;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
+#navigationBar {
+    /* background: rgb(109, 147, 223); */
+    position: relative;
+    min-width: 100%;
+    opacity: 100%;
+    z-index: 2000;
+    margin-bottom: 5vh;
+  }
+
+.navigation-item a {
+    color: #fff;
+    font-weight: bold;
+}
+  
+  /* Color changes when hover */
+.navigation-item a:hover {
+    color: #49cb6e;
+    text-decoration: none;
 }
 
-.nav-item {
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-#NavItemList {
-  display: flex;
-  flex-direction: row;
-}
-
-.nav-item a {
-  color: #fff;
-  font-weight: bold;
-}
-
-.nav-item a:hover {
-  color: #49cb6e;
-  text-decoration: none;
-}
-
-#ContactBtn {
-  font-weight: bold;
+.navigation-item {
+    padding-left: 6.5vw;
+    padding-right: 6.5vw;
 }
