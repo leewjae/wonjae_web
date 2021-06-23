@@ -3,21 +3,18 @@
   max-width: 100%;
   background: #2d8568;
   z-index: 2000;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
 }
 
 .nav-item {
   padding-left: 10%;
+  padding-right: 10%;
 }
 
 #NavItemList {
-  /* margin : 10 0 10 0 px; */
   display: flex;
   flex-direction: row;
-}
-
-.container {
-  padding-top: 1%;
-  padding-bottom: 1%;
 }
 
 .nav-item a {
