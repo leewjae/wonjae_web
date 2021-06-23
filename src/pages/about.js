@@ -20,7 +20,6 @@ class About extends React.Component {
         <div className = "Header">About me</div>
           <Row className = "Profile">
                 <img src={require('./img/wonjaelee.jpg').default} alt = ""/>
-                {/* <img src={require('./img/CAL_ACCEPTED.png').default} alt = ""/> */}
           </Row>
           <div id = "intro-message">{intro_message}</div>
         </Container>

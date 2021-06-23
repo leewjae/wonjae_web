@@ -1,11 +1,10 @@
 #Router {
   max-width: 100%;
   min-height: 100vh;
-  background: #21439b;
+  background: #DADED4;
 }
 
 #NavItemList {
-  /* margin : 10 0 10 0 px; */
   display: flex;
   flex-direction: row;
 }

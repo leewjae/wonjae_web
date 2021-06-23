@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import "./css/Router.css"
 import About from './about.js'
-import Project from './project.js';
-import Work from './work.js';
-import Home from './home.js'
+import Work from './Work.js';
 import Blog from './blog.js'
 import PageNotFound from './PageNotFound.js'
 import Navi from './components/Navi.js'
@@ -23,15 +21,13 @@ const AppRouter = () => {
         <Container id = "Router">
           <Router>
             {/* naviagtion section */}
-                <Navi />
+            <Navi />
             {/* Log in section */}
                 
             {/* Switch Section  */}
             <Switch>
-                <Route exact path= "/" component = {Home} />
-                <Route path= "/about" component ={About} />
+                <Route exact path= "/" component ={About} />
                 <Route path= "/work" component ={Work} />
-                <Route path= "/project" component ={Project} />
                 <Route exact path= "/blog">
                     <Blog userObj = {userObj}/>
                 </Route>
