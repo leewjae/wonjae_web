@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import "./css/Router.css"
-import About from './About.js'
-import Work from './Work.js';
-import Blog from './Blog.js'
+import About from './about.js'
+import Work from './work.js';
+import Blog from './blog.js'
 import PageNotFound from './PageNotFound.js'
 import Navi from './components/Navi.js'
 import PostDetail from './components/PostDetail'
