@@ -4,10 +4,10 @@ import {Container, Row, Col} from 'reactstrap'
 
 let intro_message = `Hello, I'm Wonjae Lee. 
 I am studying electrical engineering and computer science at UC Berkeley. 
-I have good adaptability to work in various countries around the world, and I live in the United States.
+I have good adaptability to work in various countries around the world.
 I am studying web development using React JS and iPhone application development using SwiftUI by my own. 
-I am currently taking compsci 70: Discrete Mathematics and Probability Theory at
-UC Berkeley. I'm planning to focus on machine learning and artificial intelligence at UC Berkeley. 
+I am currently taking CS 170, EECS 16A, and CS61C at
+UC Berkeley. I'm planning to focus on machine learning and artificial intelligence for my career. 
 Please click the Contact Me button at the top for detailed questions about me. Thank you!`;
 
 class About extends React.Component {
