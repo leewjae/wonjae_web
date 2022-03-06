@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/wonjae_app/static/css/main.6d99169f.chunk.css",
-    "main.js": "/wonjae_app/static/js/main.442bfddc.chunk.js",
-    "main.js.map": "/wonjae_app/static/js/main.442bfddc.chunk.js.map",
-    "runtime-main.js": "/wonjae_app/static/js/runtime-main.a46fffe4.js",
-    "runtime-main.js.map": "/wonjae_app/static/js/runtime-main.a46fffe4.js.map",
-    "static/css/2.d6dc494e.chunk.css": "/wonjae_app/static/css/2.d6dc494e.chunk.css",
-    "static/js/2.7c5b4f6a.chunk.js": "/wonjae_app/static/js/2.7c5b4f6a.chunk.js",
-    "static/js/2.7c5b4f6a.chunk.js.map": "/wonjae_app/static/js/2.7c5b4f6a.chunk.js.map",
-    "static/js/3.2a1c3f31.chunk.js": "/wonjae_app/static/js/3.2a1c3f31.chunk.js",
-    "static/js/3.2a1c3f31.chunk.js.map": "/wonjae_app/static/js/3.2a1c3f31.chunk.js.map",
-    "index.html": "/wonjae_app/index.html",
-    "static/css/2.d6dc494e.chunk.css.map": "/wonjae_app/static/css/2.d6dc494e.chunk.css.map",
-    "static/css/main.6d99169f.chunk.css.map": "/wonjae_app/static/css/main.6d99169f.chunk.css.map",
-    "static/js/2.7c5b4f6a.chunk.js.LICENSE.txt": "/wonjae_app/static/js/2.7c5b4f6a.chunk.js.LICENSE.txt",
-    "static/media/wonjaelee.jpg": "/wonjae_app/static/media/wonjaelee.6d9f150b.jpg"
+    "main.css": "/wonjae_web/static/css/main.6d99169f.chunk.css",
+    "main.js": "/wonjae_web/static/js/main.442bfddc.chunk.js",
+    "main.js.map": "/wonjae_web/static/js/main.442bfddc.chunk.js.map",
+    "runtime-main.js": "/wonjae_web/static/js/runtime-main.864693b6.js",
+    "runtime-main.js.map": "/wonjae_web/static/js/runtime-main.864693b6.js.map",
+    "static/css/2.d6dc494e.chunk.css": "/wonjae_web/static/css/2.d6dc494e.chunk.css",
+    "static/js/2.aa4ae2c2.chunk.js": "/wonjae_web/static/js/2.aa4ae2c2.chunk.js",
+    "static/js/2.aa4ae2c2.chunk.js.map": "/wonjae_web/static/js/2.aa4ae2c2.chunk.js.map",
+    "static/js/3.2a1c3f31.chunk.js": "/wonjae_web/static/js/3.2a1c3f31.chunk.js",
+    "static/js/3.2a1c3f31.chunk.js.map": "/wonjae_web/static/js/3.2a1c3f31.chunk.js.map",
+    "index.html": "/wonjae_web/index.html",
+    "static/css/2.d6dc494e.chunk.css.map": "/wonjae_web/static/css/2.d6dc494e.chunk.css.map",
+    "static/css/main.6d99169f.chunk.css.map": "/wonjae_web/static/css/main.6d99169f.chunk.css.map",
+    "static/js/2.aa4ae2c2.chunk.js.LICENSE.txt": "/wonjae_web/static/js/2.aa4ae2c2.chunk.js.LICENSE.txt",
+    "static/media/wonjaelee.jpg": "/wonjae_web/static/media/wonjaelee.6d9f150b.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a46fffe4.js",
+    "static/js/runtime-main.864693b6.js",
     "static/css/2.d6dc494e.chunk.css",
-    "static/js/2.7c5b4f6a.chunk.js",
+    "static/js/2.aa4ae2c2.chunk.js",
     "static/css/main.6d99169f.chunk.css",
     "static/js/main.442bfddc.chunk.js"
   ]
