@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { dbService } from "../fbase.js";
-import {Container, Col} from "reactstrap"
+import { dbService, storageService } from "../fbase.js";
+import {Container, Col, Row} from "reactstrap"
 import {Link} from "react-router-dom"
 import "./css/blog.css"
 import {v4 as uuidv4} from "uuid";
 import { Box, Grommet, Pagination, Text } from 'grommet';
 
 const Blog = (props) => {
-    //postTitle is for the title of the post
+    //PostTitle is for the title of the post
     const [postTitle, setPostTitle] = useState("");
-    //post is for the content of the post
+    //Text is for the content of the post
     const [text, setText] = useState("");
-    //posts is for the array of posts in the db.
+    //Posts is for the array of posts in the db.
     const [posts, setPosts] = useState([]);
+    //Attachment is the file of the post.
+    const [attachment, setAttachment] = useState("");
     //isWriting tells the machine if the user wants to write.
+    //The default value is false
     const [isWriting, setIsWriting] = useState(false);
 
+    //Userobject is the value of user info.
     const [userObj, setUserObj] = useState(null);
+
     //currentPostIndex represent what is the current post index number.
     //If you want to show n posts at once, set this state to n - 1
     const [currentPostIndex, setCurrentPostIndex] = useState(0);
 
-    const [numberOfPostsInOneView, setNumberOfPostsInOneView] = useState(4);
-    //
-    const [maximumVisibleWordLength, setMaximumVisibleWordLength] = useState(100);
+    //Change this value to change number of posts in one view.
+    const [numberOfPostsInOneView, setNumberOfPostsInOneView] = useState(10);
 
     //This will update the state "posts"
     const getPosts = async () => {
@@ -41,7 +45,7 @@ const Blog = (props) => {
     useEffect(() => {
         getPosts();
         setUserObj(props.userObj)
-        // setPostsInOneView(posts.slice(currentPostIndex, (currentPostIndex + numberOfPostsInOneView - 1)))
+        window.scrollTo(0, 0)
     },[])
 
     //user post using webpage
@@ -50,15 +54,31 @@ const Blog = (props) => {
         //Prevents submission of nothing
         event.preventDefault();
 
+        let attachmentUrl = "";
+
+        if (attachment != "") {
+            const attachmentRef = storageService
+            .ref()
+            .child(`test/${uuidv4()}`);
+            const response = await attachmentRef.putString(attachment, "data_url");
+            attachmentUrl = await response.ref.getDownloadURL();
+        }
+
         const postObj = {
             createdAt : Date.now(),
             post : text,
-            title : postTitle
+            title : postTitle,
+            topic : "default",
+            likes : 0,
+            views : 0,
+            photo : "",
+            attachmentUrl
         }
 
         await dbService.collection("posts").add(postObj);
         setText("");
         setPostTitle("");
+        setAttachment();
     }
 
     //display changed value (example: change in 
@@ -80,62 +100,49 @@ const Blog = (props) => {
         return (parstDate[1] + " " + parstDate[2] + ", "+ parstDate[3] + " " + parstDate[4] + " (KST)");
     }
 
-    // const nextPosts = () => {
-    //     console.log(currentPostIndex)
-    //     {
-    //         ((currentPostIndex + numberOfPostsInOneView) < posts.length)
-    //         ?
-    //         setCurrentPostIndex(currentPostIndex + numberOfPostsInOneView)
-    //         :
-    //         window.alert("You cannot move forward")
-    //     }
-    // }
+    const onFileChange = (event) => {
+        const {
+            target: {files},
+        } = event;
+        const theFile = files[0];
+        const reader = new FileReader();
+        reader.onloadend = (finishedEvent) => {
+            const {currentTarget: {result}} = finishedEvent;
+            setAttachment(result);
+        };
+        reader.readAsDataURL(theFile);
+    };
 
-    // const previousPosts = () => {
-    //     console.log(currentPostIndex)
-    //     {
-    //         ((currentPostIndex - numberOfPostsInOneView) >= 0)
-    //         ?
-    //         setCurrentPostIndex(currentPostIndex - numberOfPostsInOneView)
-    //         :
-    //         window.alert("You cannot move backward")
-    //     }
-    // }
+    const onClearAttachment = (event) => {
+        setAttachment(null);
+    }
 
     return (
-        <Box align="center">
-            <Box align="start">
-
-            <div id = "posting">Postings...</div>
-
-            {/* Mapping the posts object */}
+        <Container>
+            <Container id = "post-view">
+            <div id = "posting">Blog</div>
+            <Row> 
             {posts.slice(currentPostIndex, (currentPostIndex + numberOfPostsInOneView)).map((post) => (
                     <div className = "post" key = {post.id}>
                     <Link to = {{
                         pathname: `/blog/${post.id}`,
                         state: post
                     }}>
-                        <h2>{post.title}</h2>
-                    </Link>
-                    {/* If the content of the post is too long, it will print ... instead. */}
-                    {
-                        (post.post.length > maximumVisibleWordLength) ? 
-                        
-                        <h3>{post.post.slice(0,maximumVisibleWordLength) + "..."} </h3>
+                        {post.attachmentUrl ? <img src={post.attachmentUrl} className = "post-photo"/> 
                         :
-                        <h3>{post.post} </h3>
-                    }
-                    <div className = "timestamp">{dateConverter(new Date(post.createdAt).toString())}</div>
+                        <img src={require('./img/EECS-logo.png').default} className = "post-photo"/>}
+                        {/* <div className = "timestamp">{dateConverter(new Date(post.createdAt).toString())}</div> */}
+                    </Link>
                     </div>
                 ))}
-            </Box>
+            </Row>
+
             {/* Pagination Section */}
             {
                 <Box
-                        align="center"
-                        pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
-                        id = "blog-pagination"
-                    >
+                    pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
+                    id = "blog-pagination"
+                >
                     <Text margin={{ bottom: 'small' }}>
                     Click the button below for navigating posts!        
                     </Text>
@@ -145,12 +152,13 @@ const Blog = (props) => {
                 </Box>
             }
 
+            </Container>
             {userObj ? 
                 <>
                 {/* Super user login was successful */}
                         { isWriting ? 
                             <>
-                                <Box align="start">
+                                <Box>
                                     <textarea
                                             id = "title-box"
                                             type = "text"
@@ -161,10 +169,10 @@ const Blog = (props) => {
                                             rows = {1}
                                     />
                                 </Box>
-                                <Box align="center" direction="column">
+                                <Box direction="column">
                                 <form onSubmit = {onSubmit}>
                                 <textarea
-                                        id = "content-box"
+                                        id = "writing-box"
                                         type="text"
                                         value={text}
                                         onChange={onTextChange}
@@ -172,10 +180,17 @@ const Blog = (props) => {
                                         cols = {80}
                                         rows = {10}
                                 />
-                                <input type="submit" value = "upload"/>
+                                <input type="file" accept = "image/*" onChange = {onFileChange}/>
+                                <input type="submit" value = "upload" />
                                 </form>
                                 {/* <input type="file" accept="image/*"/> */}
                                 <input type = "button" value = "Cancel" onClick={()=>{setIsWriting(false)}} />
+                                {attachment &&
+                                    <div>
+                                        <img src={attachment} width = "50px" height = "50px"/>
+                                        <button onClick={onClearAttachment}>Clear</button>
+                                        </div>
+                                    }
                                 </Box>
                             </>
                                 :
@@ -185,9 +200,9 @@ const Blog = (props) => {
                         }
             </>
             :
-                        null
+                null
             }
-        </Box>
+        </Container>
     )
 
     

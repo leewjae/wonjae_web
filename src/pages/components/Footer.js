@@ -15,6 +15,8 @@ const Footer = () => {
         <Ft background="brand" pad="medium">
         <Text>Copyright</Text>
         <Anchor label="About" />
+        <Anchor label="fdafafda" />
+
         </Ft>
     )
 }

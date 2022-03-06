@@ -14,8 +14,9 @@
 }
 
 .intro-message {
-  font-size: 1.5em;
-  width : 60%;
+    margin-top: 2%;
+    font-size: 1.5em;
+    width : 55%;
 }
 
 .Header {

@@ -2,9 +2,12 @@
     font-size: 3em;
 }
 
-#content-box {
-    /* width : 80%;
-    min-height : 100px; */
+#post-view {
+    /* padding : 10vw */
+}
+
+#writing-box {
+    width : 80%;
 }
 
 .post a:hover {
@@ -16,7 +19,12 @@
 }
 
 .post {
-    max-width: 30vw;
+    margin: 0.5vw
+}
+
+.post img{
+    width : 15vw;
+    height: 15vw
 }
 
 .timestamp {
@@ -27,3 +35,4 @@
     /* position: absolute;
     top: 85vh; */
 }
+

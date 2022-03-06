@@ -1,8 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./css/work.css"
 import {Col, Row, Container} from "reactstrap"
 
 const experiences = [
+    {
+        'link' : "https://engineering.berkeley.edu/",
+        'id' : 5,
+        'place' : 'UC Berkeley College of Engineering, Berkeley, CA',
+        'title' : 'Academic Intern',
+        'description' : `Helping weekly sections of 30 students to build a firm foundation of C and machine structures. Reinforcing students’ knowledge in pointer, cache, concurrency, memory management, etc.`,
+      },
   {
     'link' : "https://apps.apple.com/kr/app/%EC%83%88%EB%A1%9C%EC%9A%B4-%ED%94%BC%EC%A1%B0%EB%AC%BC-%EC%A0%84%EB%8F%84%EC%A7%80/id1533426135",
     'id' : 0,
@@ -81,26 +88,26 @@ const experiences = [
   
 ]
 
-class Work extends React.Component {
+const Work = ()=> {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
 
-  render() {
     return (
-
-      <Container id = "Work" className = "section">
-        <div className = "Header">Work / Experiences</div>
-        {experiences.map(experience =>(
-              <Row key = {experience.id}>
-                <Col key = {experience.id}>
-                  <a href = {experience.link} target='_blank' rel="noreferrer" className = "Work-Place">{experience.place}</a>
-                  <div className = "Work-Title">{experience.title}</div>
-                  <div className = "Work-Description">{experience.description}</div>
-                </Col>
-              </Row>
-        ))  
-        }
-    </Container>
-    )
-  }
+        <Container id = "Work" className = "section">
+          <div className = "Header">Work / Experiences</div>
+          {experiences.map(experience =>(
+                <Row key = {experience.id}>
+                  <Col key = {experience.id}>
+                    <a href = {experience.link} target='_blank' rel="noreferrer" className = "Work-Place">{experience.place}</a>
+                    <div className = "Work-Title">{experience.title}</div>
+                    <div className = "Work-Description">{experience.description}</div>
+                  </Col>
+                </Row>
+          ))  
+          }
+      </Container>
+      )
 }
 
 export default Work

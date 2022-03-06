@@ -28,7 +28,7 @@ const AppRouter = () => {
             <Container id = "content">
             <Switch>
                 <Route exact path= "/" component ={About} />
-                <Route path= "/work" component ={Work} />
+                <Route exact path= "/work" component ={Work} />
                 <Route exact path= "/blog">
                     <Blog userObj = {userObj}/>
                 </Route>
