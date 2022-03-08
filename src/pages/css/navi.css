@@ -19,6 +19,7 @@
 }
 
 .navigation-item {
-    padding-left: 8.5vw;
-    padding-right: 8.5vw;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+    font-size: 2.0ex;
 }

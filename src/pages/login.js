@@ -15,6 +15,7 @@ const Login = (props) => {
     // useEffect(() => {
     // },[])
 
+    // On Change for fields
     const onChange =(event)=> {
         const {
           target : {name, value},
@@ -32,21 +33,23 @@ const Login = (props) => {
         }
       }
 
-
+      // Clicking Log In Btn
     const onLogInSubmit = async(event) => {
-    event.preventDefault();
-    try {
-        let data;
-        //login 
-        data = await authService.signInWithEmailAndPassword(
-            signInEmail, signInPassword
-        )
-        props.setUserObj(data);
-        } catch(error) {
-            setError(error.message)
-        }
+        event.preventDefault();
+        try {
+            let data;
+            //login 
+            data = await authService.signInWithEmailAndPassword(
+                logInEmail, logInPassword
+            )
+                props.setUserObj(data);
+            } catch(error) {
+                console.log(error)
+                setError(error.message)
+            }
     }
 
+    // Asserthing Function.
     function assert(condition) {
         if (!condition) {
             throw new Error("Password Does Not Match");
@@ -55,17 +58,17 @@ const Login = (props) => {
 
     const onSignInSubmit = async(event) => {
         event.preventDefault();
-        try {
-            assert(signInPassword === signInReEnterPassword)
-            authService.createUserWithEmailAndPassword(signInEmail, signInPassword)
-            window.alert("Creating User :" + {signInEmail} + " was successful");
+            try {
+                assert(signInPassword === signInReEnterPassword)
+                authService.createUserWithEmailAndPassword(signInEmail, signInPassword)
+            } catch(error) {
+                var errorMessage = error.message;
+                alert(errorMessage);
+            }
             setsignInEmail("")
             setsignInPassword("")
             setsignInReEnterPassword("")
             // setisSignin(false)
-            } catch(error) {
-                setError(error.message)
-            }
         }
 
     const logOutFunc = () => {
@@ -86,40 +89,40 @@ const Login = (props) => {
                 </Col>
                 : 
                 isSignin ?
-                <Col className = "signin-box">
-                <h1>Sign In</h1>
-                <form onSubmit = {onSignInSubmit}>
-                <input 
-                name="signInEmail"
-                type="text"
-                placeholder="Email"
-                required value={signInEmail}
-                onChange={onChange} 
-                />
-                <br />
-                <input
-                name="signInPassword"
-                type="password"
-                placeholder="Password" 
-                required value={signInPassword} 
-                onChange={onChange} 
-                />
-                <br />
-                <input
-                name="signInReEnterPassword"
-                type="password"
-                placeholder="Verify Password" 
-                required value={signInReEnterPassword} 
-                onChange={onChange} 
-                />
-                <br />
-                {error}
-                <br />
-                <input type="submit" value = "Sign In"/>
-                </form>
-                <button onClick={() => {setisSignin(false)}}>Cancel</button>
-                </Col>
-                    :
+                    <Col className = "signin-box">
+                    <h1>Sign In</h1>
+                    <form onSubmit = {onSignInSubmit}>
+                        <input 
+                        name="signInEmail"
+                        type="text"
+                        placeholder="Email"
+                        required value={signInEmail}
+                        onChange={onChange} 
+                        />
+                        <br />
+                        <input
+                        name="signInPassword"
+                        type="password"
+                        placeholder="Password" 
+                        required value={signInPassword} 
+                        onChange={onChange} 
+                        />
+                        <br />
+                        <input
+                        name="signInReEnterPassword"
+                        type="password"
+                        placeholder="Verify Password" 
+                        required value={signInReEnterPassword} 
+                        onChange={onChange} 
+                        />
+                        <br />
+                        {error}
+                        <br />
+                        <input type="submit" value = "Sign In"/>
+                    </form>
+                    <button onClick={() => {setisSignin(false)}}>Cancel</button>
+                    </Col>
+                :
                 <Col className = "login-box">
                     <h1>Login</h1>
                     <form onSubmit = {onLogInSubmit}>

@@ -28,7 +28,6 @@ const Blog = (props) => {
 
     //Change this value to change number of posts in one view.
     const [numberOfPostsInOneView, setNumberOfPostsInOneView] = useState(10);
-
     //This will update the state "posts"
     const getPosts = async () => {
         const dbPosts = await dbService.collection("posts").orderBy("createdAt", "asc").get();
@@ -53,9 +52,7 @@ const Blog = (props) => {
 
         //Prevents submission of nothing
         event.preventDefault();
-
         let attachmentUrl = "";
-
         if (attachment != "") {
             const attachmentRef = storageService
             .ref()
@@ -70,6 +67,7 @@ const Blog = (props) => {
             title : postTitle,
             topic : "default",
             likes : 0,
+            dislikes : 0,
             views : 0,
             photo : "",
             attachmentUrl
@@ -126,31 +124,16 @@ const Blog = (props) => {
                     <div className = "post" key = {post.id}>
                     <Link to = {{
                         pathname: `/blog/${post.id}`,
-                        state: post
-                    }}>
+                        state : {pid: post.id}
+                    }}
+                    >
                         {post.attachmentUrl ? <img src={post.attachmentUrl} className = "post-photo"/> 
                         :
                         <img src={require('./img/EECS-logo.png').default} className = "post-photo"/>}
-                        {/* <div className = "timestamp">{dateConverter(new Date(post.createdAt).toString())}</div> */}
                     </Link>
                     </div>
                 ))}
             </Row>
-
-            {/* Pagination Section */}
-            {
-                <Box
-                    pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
-                    id = "blog-pagination"
-                >
-                    <Text margin={{ bottom: 'small' }}>
-                    Click the button below for navigating posts!        
-                    </Text>
-                    <Pagination onChange={(event)=>{<>
-                    {setCurrentPostIndex(event.startIndex)}
-                    </>}} numberItems={posts.length} step={numberOfPostsInOneView}/>
-                </Box>
-            }
 
             </Container>
             {userObj ? 
@@ -201,6 +184,26 @@ const Blog = (props) => {
             </>
             :
                 null
+            }
+
+                {/* Pagination Section */}
+                        {
+                <Box style={{
+                    left: '50%', top: '80%',
+                    // transform: 'translate(-50%, -50%)'
+                }}
+                    pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
+                    id = "blog-pagination"
+                >
+                    <Pagination onChange={(event)=>{<>
+                    {setCurrentPostIndex(event.startIndex)}
+                    </>}} numberItems={posts.length} step={numberOfPostsInOneView}
+                    style={{
+                        position: 'absolute', left: '50%', top: '80%',
+                        transform: 'translate(-50%, -50%)'
+                    }}
+                    />
+                </Box>
             }
         </Container>
     )

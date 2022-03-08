@@ -17,6 +17,9 @@ const Navi = () => {
                 <div id = "login" className = "navigation-item">
                     <Link to = "/login">Log in</Link>
                 </div>
+                <div id = "resume" className = "navigation-item">
+                    <a href='../files/leewjae_resume.pdf'>résumé</a>
+                </div>
             </Row>
     )
 }
