@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import './css/about.css';
 import {Container, Row, Col} from 'reactstrap'
+import HomePageRouteCard from "./components/HomePageRouteCard";
 
 let intro_message = `Hello! I'm Wonjae Lee. 
 I am studying electrical engineering and computer science at UC Berkeley. 

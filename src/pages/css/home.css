@@ -1,0 +1,17 @@
+
+.HomeNavigationImage {
+    height : 50vh;
+    width : 20vw;
+    margin : 0 1vw 0;
+}
+
+.HomeNavigationImageContainerRow {
+    position : absolute;
+    bottom : 20%;
+    float: right;
+}
+
+.greetings {
+    font-size: 2vw;
+
+}

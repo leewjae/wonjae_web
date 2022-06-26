@@ -1,16 +1,15 @@
 import React, {useState} from "react";
 import "./css/Router.css"
-import About from './about.js'
+import Home from './Home.js'
+import About from './About.js'
 import Work from './work.js';
-import Blog from './blog.js'
+import Blog from './Blog.js'
 import PageNotFound from './PageNotFound.js'
 import Navi from './components/Navi.js'
 import PostDetail from './components/PostDetail'
-import Login from './login.js'
-import { authService, firebaseInstance } from "../fbase";
+import Login from './Login.js'
 import {Container, Col} from "reactstrap"
 import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
-import {Box} from "grommet";
 
 const AppRouter = () => {
 
@@ -20,14 +19,10 @@ const AppRouter = () => {
         <>
         <Container id = "Router">
           <Router>
-            {/* naviagtion section */}
-            <Navi />
-            {/* Log in section */}
-                
-            {/* Switch Section  */}
             <Container id = "content">
             <Switch>
-                <Route exact path= "/" component ={About} />
+                <Route exact path= "/" component = {Home} />
+                <Route exact path= "/about" component ={About} />
                 <Route exact path= "/work" component ={Work} />
                 <Route exact path= "/blog">
                     <Blog userObj = {userObj}/>
